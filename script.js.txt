@@ -1,0 +1,17 @@
+// script.js
+
+let currentIndex = 0;
+const images = document.querySelectorAll('.gallery-image');
+const totalImages = images.length;
+
+document.querySelector('.next-button').addEventListener('click', () => {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % totalImages;
+    images[currentIndex].classList.add('active');
+});
+
+document.querySelector('.prev-button').addEventListener('click', () => {
+    images[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    images[currentIndex].classList.add('active');
+});
